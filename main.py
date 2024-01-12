@@ -1,21 +1,7 @@
-# Save this code in a file named 'pokemon_bot.py'
-
 import discord
 from discord.ext import commands
-import requests
-from bs4 import BeautifulSoup
-from PIL import Image
-import pytesseract
-import os
-from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
-
-TOKEN = os.getenv('TOKEN')
-PREFIX = '!pokemon'
-
-bot = commands.Bot(command_prefix=PREFIX)
+bot = commands.Bot(command_prefix='!')
 
 @bot.event
 async def on_ready():
@@ -68,4 +54,4 @@ async def ocr_pokemon_rating(ctx, url):
         except OSError:
             pass
 
-bot.run(TOKEN)
+bot.run('YOUR_BOT_TOKEN')
