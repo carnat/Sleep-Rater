@@ -1,7 +1,16 @@
 import discord
 from discord.ext import commands
+from discord.ext.commands import Bot
+import requests
+from bs4 import BeautifulSoup
+from PIL import Image
+import pytesseract
+import os
 
-bot = commands.Bot(command_prefix='!')
+intents = discord.Intents.default()
+intents.all()
+
+bot = commands.Bot(command_prefix='!', intents=intents)
 
 @bot.event
 async def on_ready():
