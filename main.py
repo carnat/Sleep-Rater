@@ -1,16 +1,22 @@
 import discord
 from discord.ext import commands
-from discord.ext.commands import Bot
 import requests
 from bs4 import BeautifulSoup
 from PIL import Image
 import pytesseract
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+TOKEN = os.getenv('TOKEN')
+PREFIX = '!pokemon'
 
 intents = discord.Intents.default()
 intents.all()
 
-bot = commands.Bot(command_prefix='!', intents=intents)
+bot = commands.Bot(command_prefix=PREFIX, intents=intents)
 
 @bot.event
 async def on_ready():
@@ -63,4 +69,4 @@ async def ocr_pokemon_rating(ctx, url):
         except OSError:
             pass
 
-bot.run('YOUR_BOT_TOKEN')
+bot.run(TOKEN)
