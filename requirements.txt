@@ -3,4 +3,4 @@ beautifulsoup4
 pytesseract 
 pillow
 requests
-dotenv
+python-dotenv
