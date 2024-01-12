@@ -2,3 +2,4 @@ discord.py
 beautifulsoup4 
 pytesseract 
 pillow
+requests
